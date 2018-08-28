@@ -83,13 +83,13 @@ func newTorrent(meta []byte, infohashHex string) (*torrent, error) {
 				if inter, ok := f["path.utf-8"].([]interface{}); ok {
 					path := make([]string, len(inter))
 					for i, v := range inter {
-					    path[i] = fmt.Sprint(v)
+						path[i] = fmt.Sprint(v)
 					}
 					filename = strings.Join(path, "/")
 				} else if inter, ok := f["path"].([]interface{}); ok {
 					path := make([]string, len(inter))
 					for i, v := range inter {
-					    path[i] = fmt.Sprint(v)
+						path[i] = fmt.Sprint(v)
 					}
 					filename = strings.Join(path, "/")
 				}
@@ -243,8 +243,8 @@ func (p *p2pspider) save(infohashHex string, data []byte) (string, error) {
 }
 
 func (p *p2pspider) pathname(infohashHex string) (name string, dir string) {
-	dir = path.Join(p.dir, infohashHex[:2], infohashHex[len(infohashHex)-2:])
-	name = path.Join(dir, infohashHex+".torrent")
+	// dir = path.Join(p.dir, infohashHex[:2], infohashHex[len(infohashHex)-2:])
+	name = path.Join(p.dir, infohashHex+".torrent")
 	return
 }
 
