@@ -243,8 +243,8 @@ func (p *p2pspider) save(infohashHex string, data []byte) (string, error) {
 }
 
 func (p *p2pspider) pathname(infohashHex string) (name string, dir string) {
-	// dir = path.Join(p.dir, infohashHex[:2], infohashHex[len(infohashHex)-2:])
-	name = path.Join(p.dir, infohashHex+".torrent")
+	dir = path.Join(p.dir)
+	name = path.Join(dir, infohashHex+".torrent")
 	return
 }
 
